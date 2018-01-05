@@ -1,0 +1,225 @@
+{
+  "contract_name": "RoutePriceHolder",
+  "abi": [
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "tollBooth",
+          "type": "address"
+        }
+      ],
+      "name": "removeTollBooth",
+      "outputs": [
+        {
+          "name": "success",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "newOwner",
+          "type": "address"
+        }
+      ],
+      "name": "setOwner",
+      "outputs": [
+        {
+          "name": "success",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "tollBooth",
+          "type": "address"
+        }
+      ],
+      "name": "addTollBooth",
+      "outputs": [
+        {
+          "name": "success",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "entryBooth",
+          "type": "address"
+        },
+        {
+          "name": "exitBooth",
+          "type": "address"
+        }
+      ],
+      "name": "getRoutePrice",
+      "outputs": [
+        {
+          "name": "priceWeis",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "tollBooth",
+          "type": "address"
+        }
+      ],
+      "name": "isTollBooth",
+      "outputs": [
+        {
+          "name": "isIndeed",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "getOwner",
+      "outputs": [
+        {
+          "name": "currentOwner",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "entryBooth",
+          "type": "address"
+        },
+        {
+          "name": "exitBooth",
+          "type": "address"
+        },
+        {
+          "name": "priceWeis",
+          "type": "uint256"
+        }
+      ],
+      "name": "setRoutePrice",
+      "outputs": [
+        {
+          "name": "success",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "payable": false,
+      "type": "constructor"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "name": "sender",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "name": "entryBooth",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "name": "exitBooth",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "name": "priceWeis",
+          "type": "uint256"
+        }
+      ],
+      "name": "LogRoutePriceSet",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "name": "sender",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "name": "tollBooth",
+          "type": "address"
+        }
+      ],
+      "name": "LogTollBoothAdded",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "name": "sender",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "name": "tollBooth",
+          "type": "address"
+        }
+      ],
+      "name": "LogTollBoothRemoved",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "name": "previousOwner",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "name": "newOwner",
+          "type": "address"
+        }
+      ],
+      "name": "LogOwnerSet",
+      "type": "event"
+    }
+  ],
+  "unlinked_binary": "0x6060604052341561000f57600080fd5b5b5b5b60008054600160a060020a03191633600160a060020a03161790555b5b5b5b610593806100406000396000f300606060405236156100675763ffffffff60e060020a6000350416630bbbcbb2811461006c57806313af40351461009f5780632c333eab146100d257806350295c671461010557806350bb553a1461013c578063893d20e81461016f578063e23d7c5b1461019e575b600080fd5b341561007757600080fd5b61008b600160a060020a03600435166101da565b604051901515815260200160405180910390f35b34156100aa57600080fd5b61008b600160a060020a0360043516610272565b604051901515815260200160405180910390f35b34156100dd57600080fd5b61008b600160a060020a0360043516610332565b604051901515815260200160405180910390f35b341561011057600080fd5b61012a600160a060020a03600435811690602435166103ce565b60405190815260200160405180910390f35b341561014757600080fd5b61008b600160a060020a03600435166103fb565b604051901515815260200160405180910390f35b341561017a57600080fd5b61018261041d565b604051600160a060020a03909116815260200160405180910390f35b34156101a957600080fd5b61008b600160a060020a036004358116906024351660443561042d565b604051901515815260200160405180910390f35b600160a060020a03811660009081526001602052604081205460ff16151561020157600080fd5b600160a060020a038216151561021657600080fd5b600160a060020a0380831660008181526001602052604090819020805460ff1916905590913316907f5b34220b1e6888774f5c1badf295633d5d8d4ae02d5e3019e422b3debfe89678905160405180910390a35060015b919050565b60008061027d61041d565b600160a060020a031633600160a060020a031614151561029c57600080fd5b600160a060020a03831615156102b157600080fd5b82600160a060020a03166102c361041d565b600160a060020a031614156102d757600080fd5b5060008054600160a060020a03848116600160a060020a0319831681179093551690817fa1d2149652d81eb35c360c115fc7ac594124cb1ea8a5a33e9a7f5768c62869fb60405160405180910390a3600191505b5b50919050565b600160a060020a03811660009081526001602052604081205460ff161561035857600080fd5b600160a060020a038216151561036d57600080fd5b600160a060020a03808316600081815260016020819052604091829020805460ff1916909117905590913316907fe8f587f6ae5ef5f7560b94b9369dd242c9de0588c328add1a785044abf837c6d905160405180910390a35060015b919050565b600160a060020a038083166000908152600260209081526040808320938516835292905220545b92915050565b600160a060020a03811660009081526001602052604090205460ff165b919050565b600054600160a060020a03165b90565b600061043761041d565b600160a060020a031633600160a060020a031614151561045657600080fd5b61045f846103fb565b151561046a57600080fd5b610473836103fb565b151561047e57600080fd5b82600160a060020a031684600160a060020a0316141561049d57600080fd5b600160a060020a03831615156104b257600080fd5b600160a060020a03841615156104c757600080fd5b600160a060020a038085166000908152600260209081526040808320938716835292905220548214156104f957600080fd5b600160a060020a038085166000818152600260209081526040808320888616808552925291829020869055923316907f5b631b37e5dfb698eace7497bcae58e93fac69e007127739fc79109d99c583329086905190815260200160405180910390a45060015b5b93925050505600a165627a7a72305820759e180b5e8530586938e470bd24aaaac35fb47791cb5059a58a75fe1bf244a60029",
+  "networks": {},
+  "schema_version": "0.0.5",
+  "updated_at": 1506291298722
+}

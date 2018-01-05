@@ -1,0 +1,124 @@
+{
+  "contract_name": "MultiplierHolder",
+  "abi": [
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "newOwner",
+          "type": "address"
+        }
+      ],
+      "name": "setOwner",
+      "outputs": [
+        {
+          "name": "success",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "vehicleType",
+          "type": "uint256"
+        },
+        {
+          "name": "multiplier",
+          "type": "uint256"
+        }
+      ],
+      "name": "setMultiplier",
+      "outputs": [
+        {
+          "name": "success",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "getOwner",
+      "outputs": [
+        {
+          "name": "currentOwner",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "vehicleType",
+          "type": "uint256"
+        }
+      ],
+      "name": "getMultiplier",
+      "outputs": [
+        {
+          "name": "multiplier",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "payable": false,
+      "type": "constructor"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "name": "sender",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "name": "vehicleType",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "name": "multiplier",
+          "type": "uint256"
+        }
+      ],
+      "name": "LogMultiplierSet",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "name": "previousOwner",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "name": "newOwner",
+          "type": "address"
+        }
+      ],
+      "name": "LogOwnerSet",
+      "type": "event"
+    }
+  ],
+  "unlinked_binary": "0x6060604052341561000f57600080fd5b5b5b60008054600160a060020a03191633600160a060020a03161790555b5b5b6102bb8061003e6000396000f300606060405263ffffffff60e060020a60003504166313af40358114610045578063333271d014610078578063893d20e8146100a5578063adf8252d146100d4575b600080fd5b341561005057600080fd5b610064600160a060020a03600435166100fc565b604051901515815260200160405180910390f35b341561008357600080fd5b6100646004356024356101bc565b604051901515815260200160405180910390f35b34156100b057600080fd5b6100b861026a565b604051600160a060020a03909116815260200160405180910390f35b34156100df57600080fd5b6100ea60043561027a565b60405190815260200160405180910390f35b60008061010761026a565b600160a060020a031633600160a060020a031614151561012657600080fd5b600160a060020a038316151561013b57600080fd5b82600160a060020a031661014d61026a565b600160a060020a0316141561016157600080fd5b5060008054600160a060020a03848116600160a060020a0319831681179093551690817fa1d2149652d81eb35c360c115fc7ac594124cb1ea8a5a33e9a7f5768c62869fb60405160405180910390a3600191505b5b50919050565b60006101c661026a565b600160a060020a031633600160a060020a03161415156101e557600080fd5b8215156101f157600080fd5b60008381526001602052604090205482141561020c57600080fd5b600083815260016020526040908190208390558390600160a060020a033316907f5e168e70d5925560e1407b68dc2495afbc25b36217cc6e4167b2cf3f28a46ef19085905190815260200160405180910390a35060015b5b92915050565b600054600160a060020a03165b90565b6000818152600160205260409020545b9190505600a165627a7a72305820fe5f6b3ac3e6a5c8266d52c8228c3058648ccdf4acdc93722f09340d07f325800029",
+  "networks": {},
+  "schema_version": "0.0.5",
+  "updated_at": 1506291298722
+}

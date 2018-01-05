@@ -1,0 +1,149 @@
+{
+  "contract_name": "PausableMock",
+  "abi": [
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "newOwner",
+          "type": "address"
+        }
+      ],
+      "name": "setOwner",
+      "outputs": [
+        {
+          "name": "success",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "newPausedState",
+          "type": "bool"
+        }
+      ],
+      "name": "setPaused",
+      "outputs": [
+        {
+          "name": "success",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [],
+      "name": "countUpWhenPaused",
+      "outputs": [],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "name": "counters",
+      "outputs": [
+        {
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "getOwner",
+      "outputs": [
+        {
+          "name": "currentOwner",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [],
+      "name": "countUpWhenNotPaused",
+      "outputs": [],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "isPaused",
+      "outputs": [
+        {
+          "name": "isIndeed",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "name": "paused",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "type": "constructor"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "name": "sender",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "name": "newPausedState",
+          "type": "bool"
+        }
+      ],
+      "name": "LogPausedSet",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "name": "previousOwner",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "name": "newOwner",
+          "type": "address"
+        }
+      ],
+      "name": "LogOwnerSet",
+      "type": "event"
+    }
+  ],
+  "unlinked_binary": "0x6060604052341561000f57600080fd5b60405160208061045a833981016040528080519150505b805b5b60008054600160a060020a03191633600160a060020a03161790555b60018054600160a060020a03191633600160a060020a03161760a060020a60ff02191674010000000000000000000000000000000000000000831515021790555b505b505b6103c1806100996000396000f300606060405236156100675763ffffffff60e060020a60003504166313af4035811461006c57806316c38b3c1461009f5780635a02ee76146100cb57806379f7a43a146100e0578063893d20e81461010a5780639d42ea3414610139578063b187bd261461014e575b600080fd5b341561007757600080fd5b61008b600160a060020a0360043516610175565b604051901515815260200160405180910390f35b34156100aa57600080fd5b61008b6004351515610235565b604051901515815260200160405180910390f35b34156100d657600080fd5b6100de6102dd565b005b34156100eb57600080fd5b6100f86004351515610321565b60405190815260200160405180910390f35b341561011557600080fd5b61011d610333565b604051600160a060020a03909116815260200160405180910390f35b341561014457600080fd5b6100de610343565b005b341561015957600080fd5b61008b610384565b604051901515815260200160405180910390f35b600080610180610333565b600160a060020a031633600160a060020a031614151561019f57600080fd5b600160a060020a03831615156101b457600080fd5b82600160a060020a03166101c6610333565b600160a060020a031614156101da57600080fd5b5060008054600160a060020a03848116600160a060020a0319831681179093551690817fa1d2149652d81eb35c360c115fc7ac594124cb1ea8a5a33e9a7f5768c62869fb60405160405180910390a3600191505b5b50919050565b600061023f610333565b600160a060020a031633600160a060020a031614151561025e57600080fd5b60015460a060020a900460ff161515821515146102d3576001805460a060020a60ff02191660a060020a8415159081029190911790915533600160a060020a03167fae0f86d9801b0bd39a2ce25d9fd1f202f2fd22e80150be4a99adb0275a635d6c60405160405180910390a35060016102d7565b5060005b5b919050565b6001805460a060020a900460ff16151514156102f857600080fd5b60026000610304610384565b151581526020810191909152604001600020805460010190555b5b565b60026020526000908152604090205481565b600054600160a060020a03165b90565b60015460a060020a900460ff1615156102f857600080fd5b60026000610304610384565b151581526020810191909152604001600020805460010190555b5b565b60015460a060020a900460ff165b905600a165627a7a72305820cc0b17f1f83f8c73b7afa3104e83e180c9904e5f4c65d048ecbd007903518acc0029",
+  "networks": {},
+  "schema_version": "0.0.5",
+  "updated_at": 1506291298723
+}

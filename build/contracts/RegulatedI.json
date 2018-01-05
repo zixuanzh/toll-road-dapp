@@ -1,0 +1,57 @@
+{
+  "contract_name": "RegulatedI",
+  "abi": [
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "newRegulator",
+          "type": "address"
+        }
+      ],
+      "name": "setRegulator",
+      "outputs": [
+        {
+          "name": "success",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "getRegulator",
+      "outputs": [
+        {
+          "name": "regulator",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "name": "previousRegulator",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "name": "newRegulator",
+          "type": "address"
+        }
+      ],
+      "name": "LogRegulatorSet",
+      "type": "event"
+    }
+  ],
+  "unlinked_binary": "0x",
+  "networks": {},
+  "schema_version": "0.0.5",
+  "updated_at": 1506291298722
+}

@@ -1,0 +1,946 @@
+{
+  "contract_name": "TollBoothOperator",
+  "abi": [
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "tollBooth",
+          "type": "address"
+        }
+      ],
+      "name": "removeTollBooth",
+      "outputs": [
+        {
+          "name": "success",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "newOwner",
+          "type": "address"
+        }
+      ],
+      "name": "setOwner",
+      "outputs": [
+        {
+          "name": "success",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "newPausedState",
+          "type": "bool"
+        }
+      ],
+      "name": "setPaused",
+      "outputs": [
+        {
+          "name": "success",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "entryBooth",
+          "type": "address"
+        },
+        {
+          "name": "exitBooth",
+          "type": "address"
+        },
+        {
+          "name": "count",
+          "type": "uint256"
+        }
+      ],
+      "name": "clearSomePendingPayments",
+      "outputs": [
+        {
+          "name": "success",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "tollBooth",
+          "type": "address"
+        }
+      ],
+      "name": "addTollBooth",
+      "outputs": [
+        {
+          "name": "success",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "vehicleType",
+          "type": "uint256"
+        },
+        {
+          "name": "multiplier",
+          "type": "uint256"
+        }
+      ],
+      "name": "setMultiplier",
+      "outputs": [
+        {
+          "name": "success",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "exitSecretClear",
+          "type": "bytes32"
+        }
+      ],
+      "name": "reportExitRoad",
+      "outputs": [
+        {
+          "name": "status",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "entryBooth",
+          "type": "address"
+        },
+        {
+          "name": "exitBooth",
+          "type": "address"
+        }
+      ],
+      "name": "getRoutePrice",
+      "outputs": [
+        {
+          "name": "priceWeis",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "tollBooth",
+          "type": "address"
+        }
+      ],
+      "name": "isTollBooth",
+      "outputs": [
+        {
+          "name": "isIndeed",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "secret",
+          "type": "bytes32"
+        }
+      ],
+      "name": "hashSecret",
+      "outputs": [
+        {
+          "name": "hashed",
+          "type": "bytes32"
+        }
+      ],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "exitSecretHashed",
+          "type": "bytes32"
+        }
+      ],
+      "name": "getVehicleEntry",
+      "outputs": [
+        {
+          "name": "vehicle",
+          "type": "address"
+        },
+        {
+          "name": "entryBooth",
+          "type": "address"
+        },
+        {
+          "name": "depositedWeis",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "getOwner",
+      "outputs": [
+        {
+          "name": "currentOwner",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "entryBooth",
+          "type": "address"
+        },
+        {
+          "name": "exitSecretHashed",
+          "type": "bytes32"
+        }
+      ],
+      "name": "enterRoad",
+      "outputs": [
+        {
+          "name": "success",
+          "type": "bool"
+        }
+      ],
+      "payable": true,
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "getCollectedFeesAmount",
+      "outputs": [
+        {
+          "name": "amount",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "vehicleType",
+          "type": "uint256"
+        }
+      ],
+      "name": "getMultiplier",
+      "outputs": [
+        {
+          "name": "multiplier",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "isPaused",
+      "outputs": [
+        {
+          "name": "isIndeed",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "getDeposit",
+      "outputs": [
+        {
+          "name": "weis",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "entryBooth",
+          "type": "address"
+        },
+        {
+          "name": "exitBooth",
+          "type": "address"
+        }
+      ],
+      "name": "getPendingPaymentCount",
+      "outputs": [
+        {
+          "name": "count",
+          "type": "uint256"
+        }
+      ],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "newRegulator",
+          "type": "address"
+        }
+      ],
+      "name": "setRegulator",
+      "outputs": [
+        {
+          "name": "success",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [],
+      "name": "withdrawCollectedFees",
+      "outputs": [
+        {
+          "name": "success",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "entryBooth",
+          "type": "address"
+        },
+        {
+          "name": "exitBooth",
+          "type": "address"
+        },
+        {
+          "name": "priceWeis",
+          "type": "uint256"
+        }
+      ],
+      "name": "setRoutePrice",
+      "outputs": [
+        {
+          "name": "success",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "depositWeis",
+          "type": "uint256"
+        }
+      ],
+      "name": "setDeposit",
+      "outputs": [
+        {
+          "name": "success",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [],
+      "name": "getRegulator",
+      "outputs": [
+        {
+          "name": "currentRegulator",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "name": "initialPausedState",
+          "type": "bool"
+        },
+        {
+          "name": "initialDepositInWei",
+          "type": "uint256"
+        },
+        {
+          "name": "initialRegulatorAddress",
+          "type": "address"
+        }
+      ],
+      "payable": false,
+      "type": "constructor"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "name": "vehicle",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "name": "entryBooth",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "name": "exitSecretHashed",
+          "type": "bytes32"
+        },
+        {
+          "indexed": false,
+          "name": "depositedWeis",
+          "type": "uint256"
+        }
+      ],
+      "name": "LogRoadEntered",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "name": "exitBooth",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "name": "exitSecretHashed",
+          "type": "bytes32"
+        },
+        {
+          "indexed": false,
+          "name": "finalFee",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "name": "refundWeis",
+          "type": "uint256"
+        }
+      ],
+      "name": "LogRoadExited",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "name": "exitSecretHashed",
+          "type": "bytes32"
+        },
+        {
+          "indexed": true,
+          "name": "entryBooth",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "name": "exitBooth",
+          "type": "address"
+        }
+      ],
+      "name": "LogPendingPayment",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "name": "owner",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "name": "amount",
+          "type": "uint256"
+        }
+      ],
+      "name": "LogFeesCollected",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "name": "sender",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "name": "entryBooth",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "name": "exitBooth",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "name": "priceWeis",
+          "type": "uint256"
+        }
+      ],
+      "name": "LogRoutePriceSet",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "name": "sender",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "name": "tollBooth",
+          "type": "address"
+        }
+      ],
+      "name": "LogTollBoothAdded",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "name": "sender",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "name": "tollBooth",
+          "type": "address"
+        }
+      ],
+      "name": "LogTollBoothRemoved",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "name": "sender",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "name": "vehicleType",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "name": "multiplier",
+          "type": "uint256"
+        }
+      ],
+      "name": "LogMultiplierSet",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "name": "sender",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "name": "depositWeis",
+          "type": "uint256"
+        }
+      ],
+      "name": "LogDepositSet",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "name": "previousRegulator",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "name": "newRegulator",
+          "type": "address"
+        }
+      ],
+      "name": "LogRegulatorSet",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "name": "sender",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "name": "newPausedState",
+          "type": "bool"
+        }
+      ],
+      "name": "LogPausedSet",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "name": "previousOwner",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "name": "newOwner",
+          "type": "address"
+        }
+      ],
+      "name": "LogOwnerSet",
+      "type": "event"
+    }
+  ],
+  "unlinked_binary": "0x6060604052341561000f57600080fd5b604051606080611aaf8339810160405280805191906020018051919060200180519150505b5b5b5b815b815b845b5b60008054600160a060020a03191633600160a060020a03161790555b60018054600160a060020a03191633600160a060020a03161760a060020a60ff02191674010000000000000000000000000000000000000000831515021790555b50600160a060020a03811615156100b157600080fd5b60028054600160a060020a031916600160a060020a0383161790555b508015156100da57600080fd5b60038190555b505b5b5b8115156100f057600080fd5b600160a060020a038116151561010557600080fd5b5b5050505b611996806101196000396000f300606060405236156101175763ffffffff60e060020a6000350416630bbbcbb2811461011c57806313af40351461014f57806316c38b3c14610182578063226dfb42146101ae5780632c333eab146101ea578063333271d01461021d57806339a874861461024a57806350295c671461027257806350bb553a146102a9578063552c1e55146102dc5780637527b1ca14610304578063893d20e814610347578063954d4add1461037657806399763af6146103a1578063adf8252d146103c6578063b187bd26146103ee578063c399ec8814610415578063cb3c4cbc1461043a578063cde0a4f814610471578063dd47050f146104a4578063e23d7c5b146104cb578063f5bade6614610507578063f7e317f414610531575b600080fd5b341561012757600080fd5b61013b600160a060020a0360043516610560565b604051901515815260200160405180910390f35b341561015a57600080fd5b61013b600160a060020a03600435166105f8565b604051901515815260200160405180910390f35b341561018d57600080fd5b61013b60043515156106b8565b604051901515815260200160405180910390f35b34156101b957600080fd5b61013b600160a060020a0360043581169060243516604435610760565b604051901515815260200160405180910390f35b34156101f557600080fd5b61013b600160a060020a0360043516610ca7565b604051901515815260200160405180910390f35b341561022857600080fd5b61013b600435602435610d41565b604051901515815260200160405180910390f35b341561025557600080fd5b610260600435610def565b60405190815260200160405180910390f35b341561027d57600080fd5b610260600160a060020a03600435811690602435166111ef565b60405190815260200160405180910390f35b34156102b457600080fd5b61013b600160a060020a036004351661121c565b604051901515815260200160405180910390f35b34156102e757600080fd5b61026060043561123e565b60405190815260200160405180910390f35b341561030f57600080fd5b61031a60043561125a565b604051600160a060020a039384168152919092166020820152604080820192909252606001905180910390f35b341561035257600080fd5b61035a611294565b604051600160a060020a03909116815260200160405180910390f35b61013b600160a060020a03600435166024356112a4565b604051901515815260200160405180910390f35b34156103ac57600080fd5b6102606114cf565b60405190815260200160405180910390f35b34156103d157600080fd5b6102606004356114d6565b60405190815260200160405180910390f35b34156103f957600080fd5b61013b6114eb565b604051901515815260200160405180910390f35b341561042057600080fd5b6102606114fc565b60405190815260200160405180910390f35b341561044557600080fd5b610260600160a060020a0360043581169060243516611503565b60405190815260200160405180910390f35b341561047c57600080fd5b61013b600160a060020a0360043516611549565b604051901515815260200160405180910390f35b34156104af57600080fd5b61013b6115f7565b604051901515815260200160405180910390f35b34156104d657600080fd5b61013b600160a060020a03600435811690602435166044356116b1565b604051901515815260200160405180910390f35b341561051257600080fd5b61013b6004356117ef565b604051901515815260200160405180910390f35b341561053c57600080fd5b61035a61187a565b604051600160a060020a03909116815260200160405180910390f35b600160a060020a03811660009081526004602052604081205460ff16151561058757600080fd5b600160a060020a038216151561059c57600080fd5b600160a060020a0380831660008181526004602052604090819020805460ff1916905590913316907f5b34220b1e6888774f5c1badf295633d5d8d4ae02d5e3019e422b3debfe89678905160405180910390a35060015b919050565b600080610603611294565b600160a060020a031633600160a060020a031614151561062257600080fd5b600160a060020a038316151561063757600080fd5b82600160a060020a0316610649611294565b600160a060020a0316141561065d57600080fd5b5060008054600160a060020a03848116600160a060020a0319831681179093551690817fa1d2149652d81eb35c360c115fc7ac594124cb1ea8a5a33e9a7f5768c62869fb60405160405180910390a3600191505b5b50919050565b60006106c2611294565b600160a060020a031633600160a060020a03161415156106e157600080fd5b60015460a060020a900460ff16151582151514610756576001805460a060020a60ff02191660a060020a8415159081029190911790915533600160a060020a03167fae0f86d9801b0bd39a2ce25d9fd1f202f2fd22e80150be4a99adb0275a635d6c60405160405180910390a35060016105f3565b5060005b5b919050565b60008060008060008060006107736114eb565b1561077d57600080fd5b6107868a61121c565b151561079157600080fd5b61079a8961121c565b15156107a557600080fd5b600160a060020a03808b166000818152600a60209081526040808320948e168084529482528083205493835260098252808320948352939052919091205403889010156107f157600080fd5b8715156107fd57600080fd5b600095505b87861015610c6a57600160a060020a03808b166000818152600960209081526040808320948e16808452948252808320938352600a82528083209483529390529190912054815490880190811061085557fe5b906000526020600020906004020160005b5054600160a060020a03808c166000818152600960209081526040808320948f16808452948252808320938352600a82528083209483529390529190912054815492975090919088019081106108b857fe5b906000526020600020906004020160005b5060010154600160a060020a03808c166000818152600960209081526040808320948f16808452948252808320938352600a825280832094835293905291909120548154929650909190880190811061091e57fe5b906000526020600020906004020160005b50600201549250610a7461094161187a565b600160a060020a0316630d2ce522600960008e600160a060020a0316600160a060020a0316815260200190815260200160002060008d600160a060020a0316600160a060020a03168152602001908152602001600020600a60008f600160a060020a0316600160a060020a0316815260200190815260200160002060008e600160a060020a0316600160a060020a03168152602001908152602001600020548a018154811015156109ee57fe5b906000526020600020906004020160005b5060030154600160a060020a031660006040516020015260405160e060020a63ffffffff8416028152600160a060020a039091166004820152602401602060405180830381600087803b1515610a5457600080fd5b6102c65a03f11515610a6557600080fd5b505050604051805190506114d6565b610a7e8b8b6111ef565b02915060009050838210610b7557506007805484019055600084815260086020908152604080832060028101849055600301839055600160a060020a03808d1680855260098452828520918d16808652918452828520908552600a845282852091855292529091205481548492918801908110610af757fe5b906000526020600020906004020160005b5060030154600160a060020a031681156108fc0282604051600060405180830381858888f193505050501515610b3d57600080fd5b84600160a060020a038a1660008051602061194b833981519152868460405191825260208201526040908101905180910390a3610c5e565b506007805482019055600084815260086020908152604080832060028101849055600301839055600160a060020a03808d1680855260098452828520918d16808652918452828520908552600a84528285209185529252909120548154838603850192918801908110610be457fe5b906000526020600020906004020160005b5060030154600160a060020a031681156108fc0282604051600060405180830381858888f193505050501515610c2a57600080fd5b84600160a060020a038a1660008051602061194b833981519152848460405191825260208201526040908101905180910390a35b5b600190950194610802565b600160a060020a03808b166000908152600a60209081526040808320938d16835292905220805489019055600196505b5050505050509392505050565b600160a060020a03811660009081526004602052604081205460ff1615610ccd57600080fd5b600160a060020a0382161515610ce257600080fd5b600160a060020a0380831660008181526004602052604090819020805460ff1916600117905590913316907fe8f587f6ae5ef5f7560b94b9369dd242c9de0588c328add1a785044abf837c6d905160405180910390a35060015b919050565b6000610d4b611294565b600160a060020a031633600160a060020a0316141515610d6a57600080fd5b821515610d7657600080fd5b600083815260056020526040902054821415610d9157600080fd5b600083815260056020526040908190208390558390600160a060020a033316907f5e168e70d5925560e1407b68dc2495afbc25b36217cc6e4167b2cf3f28a46ef19085905190815260200160405180910390a35060015b5b92915050565b600080610dfa61188a565b600080600080610e086114eb565b15610e1257600080fd5b610e1b3361121c565b1515610e2657600080fd5b610e2f8861123e565b6000818152600860205260409020600201549096501515610e4f57600080fd5b60008681526008602052604090206001015433600160a060020a0390811691161415610e7a57600080fd5b600086815260086020526040902060010154610e9f90600160a060020a0316336111ef565b1515610faf5785855260008681526008602090815260408083208054600160a060020a0390811660608b01526002820154848b01526003820154838b01526001918201548116855260098452828520339091168552909252909120805490918101610f0a83826118b1565b916000526020600020906004020160005b50869081518155602082015181600101556040820151816002015560608201516003919091018054600160a060020a031916600160a060020a0392831617905560008981526008602052604090819020600101543383169450909116915088907f739c4108960ded7f9e5e6790da2d3baebfb37959560441b5787b8c70676d873c905160405180910390a4600296506111e2565b611042610fba61187a565b60008881526008602052604080822054600160a060020a0393841693630d2ce52293911691516020015260405160e060020a63ffffffff8416028152600160a060020a039091166004820152602401602060405180830381600087803b1515610a5457600080fd5b6102c65a03f11515610a6557600080fd5b505050604051805190506114d6565b600087815260086020526040902060010154909450849061106c90600160a060020a0316336111ef565b60008881526008602052604081206002015492909102945092508291508310611138575050600084815260086020526040808220600281018054600780548201905560038301805492869055949094559054909291600160a060020a039091169083156108fc0290849051600060405180830381858888f1935050505015156110f457600080fd5b6110fd8861123e565b600160a060020a03331660008051602061194b833981519152838560405191825260208201526040908101905180910390a3600196506111e2565b50506000848152600860205260408082206003810180546002830180546007805489019055908690559490915590549284900301918391600160a060020a039091169083156108fc0290849051600060405180830381858888f1935050505015156110f457600080fd5b6110fd8861123e565b600160a060020a03331660008051602061194b833981519152838560405191825260208201526040908101905180910390a3600196505b5b5b505050505050919050565b600160a060020a038083166000908152600660209081526040808320938516835292905220545b92915050565b600160a060020a03811660009081526004602052604090205460ff165b919050565b600081604051908152602001604051809103902090505b919050565b6000818152600860205260409020805460018201546003830154600290930154600160a060020a03928316939190921691015b9193909250565b600054600160a060020a03165b90565b60006112ae61188a565b6112b66114eb565b156112c057600080fd5b6112c98461121c565b15156112d457600080fd5b6113556112df61187a565b600160a060020a0316630d2ce5223360006040516020015260405160e060020a63ffffffff8416028152600160a060020a039091166004820152602401602060405180830381600087803b1515610a5457600080fd5b6102c65a03f11515610a6557600080fd5b505050604051805190506114d6565b61135d6114fc565b0234101561136a57600080fd5b600160a060020a033381168252841660208201526113ff6112df61187a565b600160a060020a0316630d2ce5223360006040516020015260405160e060020a63ffffffff8416028152600160a060020a039091166004820152602401602060405180830381600087803b1515610a5457600080fd5b6102c65a03f11515610a6557600080fd5b505050604051805190506114d6565b6114076114fc565b026040820190815251340360608201526000838152600860205260409020819081518154600160a060020a031916600160a060020a03919091161781556020820151600182018054600160a060020a031916600160a060020a03929092169190911790556040820151816002015560608201516003909101555082600160a060020a038086169033167f26213b556e4ae8dd63f1f81f4ea6181803d9a3efcad477cd84dcae45a264c30b3460405190815260200160405180910390a4600191505b5092915050565b6007545b90565b6000818152600560205260409020545b919050565b60015460a060020a900460ff165b90565b6003545b90565b600160a060020a038083166000818152600a6020908152604080832094861680845294825280832054938352600982528083209483529390529190912054035b92915050565b600254600090819033600160a060020a0390811691161461156957600080fd5b600160a060020a038316151561157e57600080fd5b600254600160a060020a038481169116141561159957600080fd5b5060028054600160a060020a03848116600160a060020a0319831617928390559081169116817fa32c4b1f26f0d877f643f7fb9db131f9cebf04d120fe5ada74c0bdfc808dab8360405160405180910390a3600191505b5b50919050565b600080611602611294565b600160a060020a031633600160a060020a031614151561162157600080fd5b600754151561162f57600080fd5b50600780546000909155600160a060020a03331681156108fc0282604051600060405180830381858888f19350505050151561166a57600080fd5b33600160a060020a03167f851c9440e522074225f247c12030d8a38be67fbda82238aac95d4a4454647f9d8260405190815260200160405180910390a2600191505b5b5090565b60006116bb611294565b600160a060020a031633600160a060020a03161415156116da57600080fd5b6116e38461121c565b15156116ee57600080fd5b6116f78361121c565b151561170257600080fd5b82600160a060020a031684600160a060020a0316141561172157600080fd5b600160a060020a038316151561173657600080fd5b600160a060020a038416151561174b57600080fd5b8161175685856111ef565b141561176157600080fd5b600160a060020a038085166000818152600660209081526040808320888616808552925291829020869055923316907f5b631b37e5dfb698eace7497bcae58e93fac69e007127739fc79109d99c583329086905190815260200160405180910390a460006117cf8585611503565b11156117e3576117e184846001610760565b505b5060015b5b9392505050565b60006117f9611294565b600160a060020a031633600160a060020a031614151561181857600080fd5b81151561182457600080fd5b60035482141561183357600080fd5b33600160a060020a03167ffa53ebd539f52eb4ef352ffacb2f8f5f8080cd8bb7ebb2f1acab3e1ce4bd65cb8360405190815260200160405180910390a25060015b5b919050565b600254600160a060020a03165b90565b60806040519081016040908152600080835260208301819052908201819052606082015290565b8154818355818115116118dd576004028160040283600052602060002091820191016118dd919061190a565b5b505050565b60806040519081016040908152600080835260208301819052908201819052606082015290565b6112a191905b808211156116ac576000808255600182018190556002820155600381018054600160a060020a0319169055600401611910565b5090565b905600cc28c1c2c2269c01d739ef1a54d12784fe3052b2f228668ba5f4bc862ebe51bca165627a7a72305820ba236e2e02e6ff5fc7eb372b07ae659465abe14ad5d1fc917743d2688180d68d0029",
+  "networks": {
+    "1506290942010": {
+      "links": {},
+      "events": {
+        "0x26213b556e4ae8dd63f1f81f4ea6181803d9a3efcad477cd84dcae45a264c30b": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": true,
+              "name": "vehicle",
+              "type": "address"
+            },
+            {
+              "indexed": true,
+              "name": "entryBooth",
+              "type": "address"
+            },
+            {
+              "indexed": true,
+              "name": "exitSecretHashed",
+              "type": "bytes32"
+            },
+            {
+              "indexed": false,
+              "name": "depositedWeis",
+              "type": "uint256"
+            }
+          ],
+          "name": "LogRoadEntered",
+          "type": "event"
+        },
+        "0xcc28c1c2c2269c01d739ef1a54d12784fe3052b2f228668ba5f4bc862ebe51bc": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": true,
+              "name": "exitBooth",
+              "type": "address"
+            },
+            {
+              "indexed": true,
+              "name": "exitSecretHashed",
+              "type": "bytes32"
+            },
+            {
+              "indexed": false,
+              "name": "finalFee",
+              "type": "uint256"
+            },
+            {
+              "indexed": false,
+              "name": "refundWeis",
+              "type": "uint256"
+            }
+          ],
+          "name": "LogRoadExited",
+          "type": "event"
+        },
+        "0x739c4108960ded7f9e5e6790da2d3baebfb37959560441b5787b8c70676d873c": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": true,
+              "name": "exitSecretHashed",
+              "type": "bytes32"
+            },
+            {
+              "indexed": true,
+              "name": "entryBooth",
+              "type": "address"
+            },
+            {
+              "indexed": true,
+              "name": "exitBooth",
+              "type": "address"
+            }
+          ],
+          "name": "LogPendingPayment",
+          "type": "event"
+        },
+        "0x851c9440e522074225f247c12030d8a38be67fbda82238aac95d4a4454647f9d": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": true,
+              "name": "owner",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "name": "amount",
+              "type": "uint256"
+            }
+          ],
+          "name": "LogFeesCollected",
+          "type": "event"
+        },
+        "0x5b631b37e5dfb698eace7497bcae58e93fac69e007127739fc79109d99c58332": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": true,
+              "name": "sender",
+              "type": "address"
+            },
+            {
+              "indexed": true,
+              "name": "entryBooth",
+              "type": "address"
+            },
+            {
+              "indexed": true,
+              "name": "exitBooth",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "name": "priceWeis",
+              "type": "uint256"
+            }
+          ],
+          "name": "LogRoutePriceSet",
+          "type": "event"
+        },
+        "0xe8f587f6ae5ef5f7560b94b9369dd242c9de0588c328add1a785044abf837c6d": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": true,
+              "name": "sender",
+              "type": "address"
+            },
+            {
+              "indexed": true,
+              "name": "tollBooth",
+              "type": "address"
+            }
+          ],
+          "name": "LogTollBoothAdded",
+          "type": "event"
+        },
+        "0x5b34220b1e6888774f5c1badf295633d5d8d4ae02d5e3019e422b3debfe89678": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": true,
+              "name": "sender",
+              "type": "address"
+            },
+            {
+              "indexed": true,
+              "name": "tollBooth",
+              "type": "address"
+            }
+          ],
+          "name": "LogTollBoothRemoved",
+          "type": "event"
+        },
+        "0x5e168e70d5925560e1407b68dc2495afbc25b36217cc6e4167b2cf3f28a46ef1": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": true,
+              "name": "sender",
+              "type": "address"
+            },
+            {
+              "indexed": true,
+              "name": "vehicleType",
+              "type": "uint256"
+            },
+            {
+              "indexed": false,
+              "name": "multiplier",
+              "type": "uint256"
+            }
+          ],
+          "name": "LogMultiplierSet",
+          "type": "event"
+        },
+        "0xfa53ebd539f52eb4ef352ffacb2f8f5f8080cd8bb7ebb2f1acab3e1ce4bd65cb": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": true,
+              "name": "sender",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "name": "depositWeis",
+              "type": "uint256"
+            }
+          ],
+          "name": "LogDepositSet",
+          "type": "event"
+        },
+        "0xa32c4b1f26f0d877f643f7fb9db131f9cebf04d120fe5ada74c0bdfc808dab83": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": true,
+              "name": "previousRegulator",
+              "type": "address"
+            },
+            {
+              "indexed": true,
+              "name": "newRegulator",
+              "type": "address"
+            }
+          ],
+          "name": "LogRegulatorSet",
+          "type": "event"
+        },
+        "0xae0f86d9801b0bd39a2ce25d9fd1f202f2fd22e80150be4a99adb0275a635d6c": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": true,
+              "name": "sender",
+              "type": "address"
+            },
+            {
+              "indexed": true,
+              "name": "newPausedState",
+              "type": "bool"
+            }
+          ],
+          "name": "LogPausedSet",
+          "type": "event"
+        },
+        "0xa1d2149652d81eb35c360c115fc7ac594124cb1ea8a5a33e9a7f5768c62869fb": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": true,
+              "name": "previousOwner",
+              "type": "address"
+            },
+            {
+              "indexed": true,
+              "name": "newOwner",
+              "type": "address"
+            }
+          ],
+          "name": "LogOwnerSet",
+          "type": "event"
+        }
+      },
+      "updated_at": 1506291317657
+    }
+  },
+  "schema_version": "0.0.5",
+  "updated_at": 1506291317657
+}
